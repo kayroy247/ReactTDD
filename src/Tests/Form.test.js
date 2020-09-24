@@ -3,17 +3,7 @@ import { render } from '@testing-library/react';
 import App from '../App';
 
 test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-  expect(linkElement).toBeInTheDocument();
-  expect(linkElement).toBeInTheDocument();
-
-});
-
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-  expect(linkElement).toBeInTheDocument();
+  const {getByLabelText, getByText } = render(<App />);
+  
+  expect(getByLabelText('Fullname')).toBeInTheDocument();
 });
